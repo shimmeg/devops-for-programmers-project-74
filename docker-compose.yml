@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: nodeos
+    container_name: nodeosapp
+    environment: {}
+    volumes:
+      - ./app:/app
+    command: npm test
