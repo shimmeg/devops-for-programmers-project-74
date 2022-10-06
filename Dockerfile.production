@@ -2,7 +2,7 @@ FROM node:14.18.1-slim
 
 WORKDIR /app
 
-# Важно для кеширования слоев
+# Important for the caching of the layers
 COPY app/package.json package.json
 COPY app/package-lock.json package-lock.json
 

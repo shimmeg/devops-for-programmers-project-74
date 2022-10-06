@@ -2,7 +2,10 @@ compose:
 	docker compose up
 
 compose-build:
-	docker compose build
+	docker compose -f docker-compose.yml build app
+
+compose-push:
+	docker compose -f docker-compose.yml push app
 
 compose-logs:
 	docker compose logs -f

@@ -4,8 +4,6 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.production
-    # volumes:
-    #   - ./app:/app
     image: aefimow/devops-for-programmers-project-74
     environment: {}
     command: npm test
