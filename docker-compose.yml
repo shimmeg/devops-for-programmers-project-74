@@ -3,10 +3,9 @@ services:
   app:
     build: 
       context: .
-      dockerfile: Dockerfile
-    image: nodeos
-    container_name: nodeosapp
+      dockerfile: Dockerfile.production
+    # volumes:
+    #   - ./app:/app
+    image: aefimow/devops-for-programmers-project-74
     environment: {}
-    volumes:
-      - ./app:/app
     command: npm test
