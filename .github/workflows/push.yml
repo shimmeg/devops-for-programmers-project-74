@@ -1,15 +1,36 @@
 name: CI
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+
+env:
+  APP_IMAGE_NAME: aefimow/devops-for-programmers-project-74
+
 jobs:
   ci:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: make compose-test
-      - run: make compose-build
-      - run: make compose-push
+      
+      - name: Check
+        run: make compose-test
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile.production
+          cache-from: type=registry,ref=${{ env.APP_IMAGE_NAME }}:cached
+          push: true
+          tags: ${{ env.APP_IMAGE_NAME }}:latest
 
