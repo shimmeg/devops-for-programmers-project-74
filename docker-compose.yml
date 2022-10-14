@@ -12,7 +12,7 @@ services:
       DATABASE_PASSWORD: password
       DATABASE_PORT: 5432
       DATABASE_HOST: db
-    command: npm test
+    command: npm -s test
     depends_on: 
       - db
 
