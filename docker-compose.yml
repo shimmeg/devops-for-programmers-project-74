@@ -7,3 +7,12 @@ services:
     image: aefimow/devops-for-programmers-project-74
     environment: {}
     command: npm test
+    depends_on:
+      - "db"
+
+  db:
+    image: postgres:14.5
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password  
