@@ -15,4 +15,4 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: super_secret_password  
+      POSTGRES_PASSWORD: password  
