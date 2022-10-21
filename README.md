@@ -10,3 +10,4 @@ You can also use `Makefile` command `make compose`.
 
 To start tests for this application, you can run `make compose-test`.
 
+The docker image for this application is hosted on docker hub - aefimow/devops-for-programmers-project-74 (docker pull aefimow/devops-for-programmers-project-74 )
