@@ -8,10 +8,11 @@ This repository contains fastify application with docker compose files to start 
 
 ### Exectuion:
 There are follow environment variables that are used by the docker compose to run the application:
-DATABASE_NAME - the name of the database (by default "postgres")
-DATABASE_USERNAME - username of the database (by default "postgres")
-DATABASE_PASSWORD - by default the password is "password"
-DATABASE_PORT - port for the db container (default if 5432)
+
+- DATABASE_NAME - the name of the database (by default "postgres")
+- DATABASE_USERNAME - username of the database (by default "postgres")
+- DATABASE_PASSWORD - by default the password is "password"
+- DATABASE_PORT - port for the db container (default if 5432)
 
 
 To start the production mode just run 
